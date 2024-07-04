@@ -44,3 +44,15 @@ console.log( nodeAbi.getTarget('116', 'electron') );
 > win32_ia32: tar zcvf robotjs-v0.6.0-electron-v114-win32-ia32.tar.gz build
 > darwin_x64: tar zcvf robotjs-v0.6.0-electron-v114-darwin-x64.tar.gz build
 > linux_x64: tar zcvf robotjs-v0.6.0-electron-v114-linux-x64.tar.gz build
+
+### windows下24.8.8
+> 先安装visual studio, node14.x.x, python3.12
+> 去掉package.json里面的"targetpractice": "0.0.7"，会依赖下载其他版本的electron
+> 不要执行： npm install
+> 执行： npm install --save-dev @electron/rebuild@3.6.0
+> 会自动安装electron及其他模块
+> 执行x64： .\node_modules\.bin\electron-rebuild.cmd -a x64
+> 执行ia32： .\node_modules\.bin\electron-rebuild.cmd -a ia32
+
+#### 问题1`python没找到distutils`
+> pip install setuptools
