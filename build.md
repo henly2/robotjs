@@ -35,3 +35,12 @@ console.log( nodeAbi.getTarget('116', 'electron') );
 }
 ```
 > ./node_modules/.bin/electron-rebuild
+
+### 如何放到引入项目下
+> 将编译出的*.node按目录格式（build/Release/*.node）放好，打包成tar.gz
+> tar zcvf robotjs-v0.6.0-electron-v${abi}-${target}.tar.gz build
+
+> win32_x64: tar zcvf robotjs-v0.6.0-electron-v114-win32-x64.tar.gz build
+> win32_ia32: tar zcvf robotjs-v0.6.0-electron-v114-win32-ia32.tar.gz build
+> darwin_x64: tar zcvf robotjs-v0.6.0-electron-v114-darwin-x64.tar.gz build
+> linux_x64: tar zcvf robotjs-v0.6.0-electron-v114-linux-x64.tar.gz build
