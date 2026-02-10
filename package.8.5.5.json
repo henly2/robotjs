@@ -11,8 +11,7 @@
     "test:win32": "jasmine test/**/*.js",
     "install": "prebuild-install || node-gyp rebuild",
     "install-debug": "prebuild-install || node-gyp rebuild --debug",
-    "prebuild": "prebuild --all",
-    "rebuild": "npm rebuild --runtime=electron --target=24.8.8 --disturl=https://atom.io/download/atom-shell --abi=114"
+    "prebuild": "prebuild --all"
   },
   "repository": {
     "type": "git",
@@ -43,16 +42,14 @@
   },
   "homepage": "https://github.com/octalmage/robotjs",
   "dependencies": {
-    "nan": "^2.17.0",
+    "nan": "^2.14.2",
     "prebuild-install": "^5.3.3"
   },
   "devDependencies": {
-    "electron": "^25.4.0",
-    "electron-rebuild": "^3.2.9",
+    "tape": "^4.8.0",
     "jasmine": "^2.99.0",
     "prebuild": "^9.1.1",
     "run-script-os": "^1.0.3",
-    "tape": "^4.8.0",
     "targetpractice": "0.0.7"
   }
 }

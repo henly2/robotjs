@@ -56,3 +56,7 @@ console.log( nodeAbi.getTarget('116', 'electron') );
 
 #### 问题1`python没找到distutils`
 > pip install setuptools
+
+### electron 25.4.0
+> npm install --save-dev electron@25.4.0
+> npm install
