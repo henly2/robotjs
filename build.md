@@ -57,6 +57,52 @@ console.log( nodeAbi.getTarget('116', 'electron') );
 #### 问题1`python没找到distutils`
 > pip install setuptools
 
-### electron 25.4.0
+### electron 25.4.0 in mac
 > npm install --save-dev electron@25.4.0
-> npm install
+> npm install --save-dev @electron/rebuild@3.6.0
+> ./node_modules/.bin/electron-rebuild
+
+**arm的mac新机器出现的问题：**
+```
+pip install setuptools出现报错：
+error: externally-managed-environment
+```
+
+使用brew安装***brew install python@3.9***,
+安装到/usr/local/Cellar/python@3.9/3.9.25/bin下，
+
+已经安装了其他版本了，直接使用
+echo 'export PATH="/usr/local/Cellar/python@3.10/3.10.5/bin:$PATH"' >> ~/.zshrc
+echo 'alias python=python3' >> ~/.zshrc
+echo 'alias pip=pip3' >> ~/.zshrc
+
+source ~/.zshrc
+
+***参考安装配置步骤：***
+```bash
+# 2. 安装Homebrew版Python 3（推荐3.9.19，适配electron-rebuild）
+brew install python@3.9
+
+# 3. 配置zsh优先使用Homebrew Python（关键：避免指向系统Python）
+echo 'export PATH="/usr/local/Cellar/python@3.9/3.9.25/bin:$PATH"' >> ~/.zshrc
+echo 'alias python=python3' >> ~/.zshrc
+echo 'alias pip=pip3' >> ~/.zshrc
+
+# 4. 生效配置
+source ~/.zshrc
+
+# 5. 验证（必须输出Homebrew路径，而非/System/Library/...）
+which python3 # 输出：/usr/local/Cellar/python@3.9/3.9.25/bin/python3
+which pip3 # 输出：/usr/local/Cellar/python@3.9/3.9.25/bin/pip3
+
+# 6. 现在安装依赖无限制
+pip3 install setuptools distutils node-gyp
+```
+
+### electron 25.4.0 in windows
+在vscode的终端执行：
+1. 安装python3.7
+2. npm install --save-dev electron@25.4.0
+3. 执行： npm install --save-dev @electron/rebuild@3.6.0
+4. 执行x64： .\node_modules\.bin\electron-rebuild.cmd -a x64
+5. 执行ia32： .\node_modules\.bin\electron-rebuild.cmd -a ia32

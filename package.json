@@ -47,6 +47,7 @@
     "prebuild-install": "^5.3.3"
   },
   "devDependencies": {
+    "@electron/rebuild": "^3.6.0",
     "electron": "^25.4.0",
     "electron-rebuild": "^3.2.9",
     "jasmine": "^2.99.0",
