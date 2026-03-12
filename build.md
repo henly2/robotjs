@@ -108,6 +108,20 @@ pip3 install setuptools distutils node-gyp
 5. 执行ia32： .\node_modules\.bin\electron-rebuild.cmd -a ia32
 
 
-### 29.3.0
+### 29.3.0 mac
+> node v14.17.6
 > 替换完依赖，直接编译
+> npm install --save nan@2.25.0
+
 > ./node_modules/.bin/electron-rebuild
+
+### 29.3.0 win
+> node v14.21.3
+> 替换完依赖，直接编译
+> npm install --save-dev electron@29.3.0
+> npm install --save nan@2.25.0
+> npm install --save-dev @electron/rebuild@3.6.0
+
+> ./node_modules/.bin/electron-rebuild.cmd -a x64
+错误：
+1. 编译失败，msbuild.exe退出😭 ，***使用nan@2.25.0后成功🤭***
