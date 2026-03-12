@@ -106,3 +106,8 @@ pip3 install setuptools distutils node-gyp
 3. 执行： npm install --save-dev @electron/rebuild@3.6.0
 4. 执行x64： .\node_modules\.bin\electron-rebuild.cmd -a x64
 5. 执行ia32： .\node_modules\.bin\electron-rebuild.cmd -a ia32
+
+
+### 29.3.0
+> 替换完依赖，直接编译
+> ./node_modules/.bin/electron-rebuild
